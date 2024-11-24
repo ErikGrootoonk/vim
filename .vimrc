@@ -43,6 +43,8 @@ nnoremap <c-l> :wincmd l<cr>
 
 nnoremap <leader>h :nohlsearch<cr>
 nnoremap <leader>v <C-v>
+nnoremap <tab> :bnext<cr> 
+nnoremap <S-tab> :bprevious<cr>
 
 call plug#begin()
 Plug 'morhetz/gruvbox'

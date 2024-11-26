@@ -98,3 +98,6 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 " show indentlines
 let g:indentLine_char = '⦙'
+
+" delete with x 
+nnoremap x "_x

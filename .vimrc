@@ -1,3 +1,13 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+"               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+"               ██║   ██║██║██╔████╔██║██████╔╝██║
+"               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║
+"                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 syntax on
 let mapleader=" "
@@ -31,6 +41,7 @@ filetype on
 set showcmd
 set background=dark
 nnoremap <F2> :NERDTreeToggle <CR>
+nnoremap <leader>e :NERDTreeToggle <CR>
 nnoremap <F3> :bel term <CR>
 nnoremap <F4> :w<cr>
 inoremap <F4> <c-o>:w<cr>
@@ -45,6 +56,14 @@ nnoremap <leader>h :nohlsearch<cr>
 nnoremap <leader>v <C-v>
 nnoremap <tab> :bnext<cr> 
 nnoremap <S-tab> :bprevious<cr>
+
+"delete single character without copying into register
+nnoremap x "_x
+
+" Buffer navigation
+nnoremap <tab> :bnext<cr>
+nnoremap <s-tab> :bprevious<cr>
+nnoremap <leader>d :bd<cr>
 
 call plug#begin()
 Plug 'morhetz/gruvbox'

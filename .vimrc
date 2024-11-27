@@ -118,5 +118,10 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 " show indentlines
 let g:indentLine_char = '⦙'
 
-" delete with x 
+" delete with x and delete
 nnoremap x "_x
+nnoremap X "_x
+nnoremap <Del> "_x
+
+" Toggle spell check.
+map <F5> :setlocal spell!<CR>

@@ -125,3 +125,19 @@ nnoremap <Del> "_x
 
 " Toggle spell check.
 map <F5> :setlocal spell!<CR>
+
+
+
+set clipboard+=unnamedplus
+let g:clipboard = {
+          \   'name': 'win32yank-wsl',
+          \   'copy': {
+          \      '+': '/mnt/c/tools/win32yank.exe -i --crlf',
+          \      '*': '/mnt/c/tools/win32yank.exe -i --crlf',
+          \    },
+          \   'paste': {
+          \      '+': '/mnt/c/tools/win32yank.exe -o --lf',
+          \      '*': '/mnt/c/tools/win32yank.exe -o --lf',
+          \   },
+          \   'cache_enabled': 0,
+          \ }

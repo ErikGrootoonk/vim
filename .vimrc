@@ -129,15 +129,11 @@ map <F5> :setlocal spell!<CR>
 
 
 set clipboard+=unnamedplus
-let g:clipboard = {
-          \   'name': 'win32yank-wsl',
-          \   'copy': {
-          \      '+': '/mnt/c/tools/win32yank.exe -i --crlf',
-          \      '*': '/mnt/c/tools/win32yank.exe -i --crlf',
-          \    },
-          \   'paste': {
-          \      '+': '/mnt/c/tools/win32yank.exe -o --lf',
-          \      '*': '/mnt/c/tools/win32yank.exe -o --lf',
-          \   },
-          \   'cache_enabled': 0,
-          \ }
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
